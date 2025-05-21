@@ -3,8 +3,8 @@ package share;
 import Interfaces.IScanner;
 import lombok.Builder;
 
-@Builder
-public class Scanner implements IScanner {
+
+public abstract class Scanner implements IScanner {
 
     private String location;
     private String prewiousLocation;
