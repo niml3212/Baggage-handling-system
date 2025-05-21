@@ -1,4 +1,4 @@
 package Interfaces;
 
-interface Grabber {
+interface IGrabber {
 }
