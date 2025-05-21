@@ -1,4 +1,6 @@
 package Interfaces;
 
-interface IScanner {
+public interface IScanner {
+
+
 }

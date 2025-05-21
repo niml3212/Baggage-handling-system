@@ -1,4 +1,4 @@
 package Interfaces;
 
-interface IConveyorBelt {
+public interface IConveyorBelt {
 }

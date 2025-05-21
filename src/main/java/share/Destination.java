@@ -1,9 +1,10 @@
 package share;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
-
-@Data
+@ToString
+@Getter
 public enum Destination{
 
     HND("Tokyo Haneda Airport"),
@@ -32,10 +33,9 @@ public enum Destination{
     MOS("Moscow Sheremetyevo International Airport"),
     STO("Stockholm Arlanda Airport"),
     NJN("Nanjing Lukou International Airport"),
-    HOU("George Bush Intercontinental Airport"),
+    HOU("George Bush Intercontinental Airport");
 
     private final String name;
-
 
     Destination(String name) {
         this.name = name;
