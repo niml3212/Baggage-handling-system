@@ -8,6 +8,6 @@ public class BaggageTagPrinter implements IBaggageTagPrinter {
 
     @Override
     public BaggageTag prtintTag() {
-        return new BaggageTag(UUID.randomUUID());
+        return new BaggageTag(UUID.randomUUID(), );
     }
 }
