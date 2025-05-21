@@ -16,5 +16,4 @@ public class ControlModul {
         BaggageMap.put(id, baggageRecord);
         return true;
     }
-
 }

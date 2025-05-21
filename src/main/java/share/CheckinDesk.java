@@ -5,12 +5,11 @@ import Interfaces.IBaggageTagPrinter;
 import Interfaces.IScanner;
 
 public class CheckinDesk {
-    private IScanner scanner = Scanner.builder().location("CheckinDesk").prewiousLocation("").build();
+    private IScanner scanner = new Scanner();
     private IBaggageTagPrinter baggageTagPrinter = new BaggageTagPrinter();
 
         public void checkInBaggage(Baggage baggage, Destination destination) {
             baggageTagPrinter.prtintTag(destination);
-
         }
 
 
