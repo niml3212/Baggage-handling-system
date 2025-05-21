@@ -16,7 +16,13 @@ public class CheckinDesk {
     public void checkInBaggage(Baggage baggage, Destination destination) {
         baggage.setBaggageTag(baggageTagPrinter.prtintTag(destination));
         scanner.scanBaggage(baggage.getBaggageTag());
+
+
+
+
+
     }
+
 
 
 
