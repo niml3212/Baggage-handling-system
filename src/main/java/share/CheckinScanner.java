@@ -1,10 +1,11 @@
 package share;
 
 import Interfaces.IScanner;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import manager.ControlModul;
 
-
+@Builder
 @RequiredArgsConstructor
 public class CheckinScanner implements IScanner {
     private final ControlModul controlModul;
