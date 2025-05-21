@@ -1,4 +1,4 @@
 package Interfaces;
 
-interface IBuffer {
+public interface IBuffer {
 }
