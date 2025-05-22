@@ -5,6 +5,6 @@ import share.Destination;
 
 public interface IBaggageTagPrinter {
 
-    public BaggageTag prtintTag(Destination destination);
+    public BaggageTag printTag(Destination destination);
 
 }
