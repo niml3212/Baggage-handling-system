@@ -2,9 +2,8 @@ package Interfaces;
 
 import share.Baggage;
 
-public interface IConveyorBelt extends ITakeBaggage {
+public interface ITakeBaggage {
 
-    @Override
     public boolean takeBaggage(Baggage baggage);
 
 

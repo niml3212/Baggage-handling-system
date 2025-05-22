@@ -9,10 +9,9 @@ import java.util.UUID;
 public class BaggageTagPrinter implements IBaggageTagPrinter {
 
     @Override
-    public BaggageTag prtintTag(Destination destination) {
+    public BaggageTag printTag(Destination destination) {
         return new BaggageTag(destination,UUID.randomUUID());
     }
-
 
 
 }
