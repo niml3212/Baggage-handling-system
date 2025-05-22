@@ -1,6 +1,5 @@
 package Interfaces;
 
-import manager.ControlModul;
 import share.BaggageTag;
 
 public interface IScanner {
