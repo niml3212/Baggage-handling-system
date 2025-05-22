@@ -1,22 +1,20 @@
 package share;
 
 import Interfaces.IScanner;
-import Interfaces.ITakeBaggage;
 import lombok.Builder;
-import manager.ControlModul;
+import manager.ControlModule;
 
 @Builder
 public class CameraModul implements IScanner {
-    private final ControlModul controlModul;
+    private final ControlModule controlModule;
 
     @Override
     public boolean scanBaggage(BaggageTag baggageTag) {
-        if(controlModul.checkBaggageRecord(baggageTag.getId(),"Entry Belt")){
-            controlModul.updateBaggageRecord(baggageTag.getId(), "first Scanpoint");
+        if(controlModule.checkBaggageRecord(baggageTag.getId(),"Entry Belt")){
+            controlModule.updateBaggageRecord(baggageTag.getId(), "first Scanpoint");
             return true;
         } else {
-            controlModul.logMessage("Error Checking Baggage! ConveyorBelt Stopped");
-
+            controlModule.logMessage("Error Checking Baggage! CheckinConveyorBelt Stopped");
             return false;
         }
     }

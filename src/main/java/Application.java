@@ -1,10 +1,7 @@
 import lombok.Builder;
-import lombok.Setter;
-import manager.ControlModul;
+import manager.ControlModule;
 import share.*;
 import lombok.extern.slf4j.Slf4j;
-
-import java.security.Provider;
 
 @Slf4j
 @Builder
@@ -12,23 +9,34 @@ public class Application {
     public static void main(String[] args) {
 
         Baggage baggage = new Baggage();
-        ControlModul controlModul = ControlModul.builder().build();
-        CheckinDesk checkinDesk = new CheckinDesk(controlModul);
+        ControlModule controlModule = ControlModule.builder().build();
+        CheckinDesk checkinDesk = new CheckinDesk(controlModule);
         CameraModul cameraModul = CameraModul.builder()
-                .controlModul(controlModul)
+                .controlModule(controlModule)
                 .build();
 
-
-        ConveyorBelt conveyorBelt = ConveyorBelt.builder()
-                .controlModul(controlModul)
+        CheckinConveyorBelt checkinConveyorBelt = CheckinConveyorBelt.builder()
+                .controlModule(controlModule)
                 .cameraModul(cameraModul)
-                .location("Eingangsband")
                 .build();
-        checkinDesk.setTakeBaggage(conveyorBelt);
+        checkinDesk.setTakeBaggage(checkinConveyorBelt);
+
+        SortingBelt sortingBelt = SortingBelt.builder()
+                .controlModule(controlModule)
+                .build();
+        checkinConveyorBelt.setBaggageTaker(sortingBelt);
+
+
+
+
+
+
+
+
+
+
+
         checkinDesk.checkInBaggage(baggage, Destination.BER);
-
-
-
-        log.info(controlModul.getBaggageMap().toString());
+        log.info(controlModule.getBaggageMap().toString());
     }
 }

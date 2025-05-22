@@ -3,20 +3,20 @@ package share;
 
 import Interfaces.IBaggageTagPrinter;
 import Interfaces.IScanner;
-import Interfaces.ITakeBaggage;
+import Interfaces.IBaggageTaker;
 
 import lombok.Setter;
-import manager.ControlModul;
+import manager.ControlModule;
 
 
 public class CheckinDesk {
     private IScanner scanner;
     private IBaggageTagPrinter baggageTagPrinter = new BaggageTagPrinter();
     @Setter
-    private ITakeBaggage takeBaggage;
+    private IBaggageTaker takeBaggage;
 
-    public CheckinDesk(ControlModul controlModul) {
-        this.scanner = new CheckinScanner(controlModul);
+    public CheckinDesk(ControlModule controlModule) {
+        this.scanner = new CheckinScanner(controlModule);
 
     }
 

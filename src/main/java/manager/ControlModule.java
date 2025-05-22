@@ -12,7 +12,7 @@ import share.BaggageRecord;
 @Slf4j
 @Getter
 @Builder
-public class ControlModul {
+public class ControlModule {
     @Builder.Default
     private final Map<UUID, BaggageRecord> BaggageMap = new HashMap<>();
 
