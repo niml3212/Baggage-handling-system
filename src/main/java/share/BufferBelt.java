@@ -1,11 +1,11 @@
 package share;
 
 import Interfaces.IBaggageTaker;
-import Interfaces.IConveyorBelt;
+
 import lombok.Builder;
 import manager.ControlModule;
 
-import java.util.Collection;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 

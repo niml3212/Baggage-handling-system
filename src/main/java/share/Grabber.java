@@ -20,7 +20,8 @@ public class Grabber implements IGrabber {
 
 
     public boolean grabOneBaggage() {
-        destinationBelt.popBaggage();
+        baggage =  destinationBelt.popBaggage();
+        if (baggage == null) return false;
         scanner.scanBaggage(baggage.getBaggageTag());
         container.takeBaggage(baggage);
         return true;
