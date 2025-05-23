@@ -22,7 +22,7 @@ public class DestinationBelt implements IBaggageTaker, IDestinationBelt {
     @Override
     public boolean takeBaggage(Baggage baggage) {
         if (list.size() < size){
-            controlModule.updateBaggageRecord(baggage.getBaggageTag().getId(), destination.name());
+            controlModule.updateBaggageRecord(baggage.getBaggageTag().getId(), destination.getName());
             list.addLast(baggage);
             controlModule.updateBaggageRecord(baggage.getBaggageTag().getId(), location);
             return true;
@@ -31,7 +31,7 @@ public class DestinationBelt implements IBaggageTaker, IDestinationBelt {
     }
 
     public Baggage popBaggage() {
-        Baggage result = list.removeFirst();
+        Baggage result = list.pollFirst();
         if (list.size() == size -1){
             Baggage baggage = sortingBelt.retrieveBaggageFromBuffer(destination);
             if(baggage != null){

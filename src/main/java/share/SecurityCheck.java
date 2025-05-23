@@ -2,6 +2,7 @@ package share;
 
 import Interfaces.IBaggageTaker;
 import lombok.Builder;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import manager.ControlModule;
 
@@ -11,6 +12,7 @@ import manager.ControlModule;
 public class SecurityCheck implements IBaggageTaker {
     private Baggage baggage;
     private final ControlModule controlModule;
+    @Setter
     private IBaggageTaker sortingBelt;
 
     @Override
