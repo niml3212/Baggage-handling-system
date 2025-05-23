@@ -1,14 +1,15 @@
 package share;
 
 import Interfaces.IBaggageTaker;
+import Interfaces.IDestinationBelt;
 import lombok.Builder;
 import manager.ControlModule;
 
-import java.util.Collection;
 import java.util.LinkedList;
 
+
 @Builder
-public class DestinationBelt implements IBaggageTaker {
+public class DestinationBelt implements IBaggageTaker, IDestinationBelt {
     @Builder.Default
     private final byte size = 21;
     @Builder.Default
@@ -16,12 +17,14 @@ public class DestinationBelt implements IBaggageTaker {
     private final SortingBelt sortingBelt;
     private final Destination destination;
     private final ControlModule controlModule;
+    private final String location = "Destination Belt";
 
     @Override
     public boolean takeBaggage(Baggage baggage) {
         if (list.size() < size){
             controlModule.updateBaggageRecord(baggage.getBaggageTag().getId(), destination.name());
             list.addLast(baggage);
+            controlModule.updateBaggageRecord(baggage.getBaggageTag().getId(), location);
             return true;
         }
         return false;
