@@ -31,11 +31,6 @@ public class Application {
 
 
 
-
-
-
-
-
         checkinDesk.checkInBaggage(baggage, Destination.BER);
         log.info(controlModule.getBaggageMap().toString());
     }
